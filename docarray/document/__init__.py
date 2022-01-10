@@ -34,15 +34,6 @@ class Document(AllMixins, BaseDCType):
     @overload
     def __init__(
         self,
-        doc: Optional[Dict],
-        field_resolver: Optional[Dict[str, str]] = None,
-        unknown_fields_handler: str = 'catch',
-    ):
-        ...
-
-    @overload
-    def __init__(
-        self,
         parent_id: Optional[str] = None,
         granularity: Optional[int] = None,
         adjacency: Optional[int] = None,
