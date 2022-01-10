@@ -1,9 +1,3 @@
-import base64
-from typing import Optional
-
-from ...helper import random_identity, download_mermaid_url
-
-
 class PlotMixin:
     """Provide helper functions for :class:`Document` to plot and visualize itself. """
 
@@ -33,7 +27,10 @@ class PlotMixin:
                 )
 
     def plot(self):
-        """ Plot image data from :attr:`.blob` or :attr:`.uri`. """
+        """Plot image data from :attr:`.blob` or :attr:`.uri`.
+
+        :raises ValueError: if `uri` and `blob` is empty.
+        """
         from IPython.display import Image, display
 
         if self.blob is not None:
